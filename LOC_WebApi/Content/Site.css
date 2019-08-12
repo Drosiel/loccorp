@@ -1,0 +1,505 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Russo One', sans-serif; }
+
+li {
+  list-style: none; }
+
+a {
+    text-decoration: none;
+}
+a:active {
+    color: red;
+}
+
+body {
+  background: #3b3b3b; }
+
+.wrapper {
+  margin: 0 20px; }
+
+h1 {
+  color: #ffffff;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+input {
+    outline: none;
+    width: 100%;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+  .header-top {
+    display: flex;
+    margin: 20px 0;
+    justify-content: space-between; }
+  .header-logo {
+    font-size: 15px;
+    text-transform: uppercase;
+    color: #ffffff; }
+  .header-reg {
+    font-size: 20px;
+    display: flex;
+  }
+    .header-reg > :first-child {
+        margin-right: 30px;
+    }
+    .header-reg__logout {
+        margin-left: 10px;
+    }
+    .header-reg__username {
+        color: #a80f0f;
+        margin: 10px
+    }
+
+.header button {
+    color: #ffffff;
+}
+    .header button:hover {
+      color: #ff5450; }
+  .header-nav {
+    display: flex;}
+    .header-nav > :first-child {
+      margin-left: 50px; }
+    .header-nav__item {
+      width: 150px;
+      height: 50px; }
+      .header-nav__item a {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #3b3b3b; }
+        .header-nav__item a span {
+          color: #ff5450; }
+        .header-nav__item a:hover {
+          background: #ff5450;
+          color: #ffffff; }
+  .header-bottom {
+    background: #ffffff;
+    border-radius: 7px; }
+
+/*��������� start*/
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    color: #b94a48;
+}
+
+.input-validation-valid {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+/*��������� end*/
+
+/*popup start*/
+.overlay1, .overlay2 {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0; 
+    display: none;
+}
+.active {
+    display:none;
+}
+
+.popup-container {
+    position: fixed;
+    background-color: #ffffff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.popup-close {
+    position:absolute;
+    top: -4px;
+    right: -25px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+    .popup-close:after {
+        content: '';
+        width: 2px;
+        height: 20px;
+        background-color: #ff5450;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: rotate(45deg);
+    }
+    .popup-close:before {
+        content: '';
+        width: 2px;
+        height: 20px;
+        background-color: #ff5450;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: rotate(-45deg);
+    }
+.popup-container__reg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.loginForm-close {
+    position: absolute;
+    top: -4px;
+    right: -25px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+.loginForm-close:after {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: #ff5450;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(45deg);
+}
+
+.loginForm-close:before {
+    content: '';
+    width: 2px;
+    height: 20px;
+    background-color: #ff5450;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: rotate(-45deg);
+}
+
+/*popup end*/
+
+/*���*/
+.chat-form {
+    display: flex;
+    margin: 5px;
+}
+
+.main {
+    width: 100%;
+}
+
+.chatBody {
+    display: flex;
+    justify-content:space-between;
+}
+
+    .chatBody-left {
+        display: flex;
+        flex: 1; 
+        flex-direction: column;
+    }
+        #inputForm {
+            width: 600px;
+            display: flex;
+        }
+            #inputForm a {
+                margin-left: 20px;
+                color: white;
+                width: 150px;
+            }
+            #sendmessage {
+                width: 150px;
+            }
+
+    .chatBody-right {
+        width: 200px;
+    }
+
+#chatroom p {
+    padding: 4px;
+}
+
+.chatroom-tite {
+    color: red;
+}
+.chatroom-box {
+    color: white;
+}
+/*����� ����*/
+
+.footer {
+    margin: 20px 20px 0 20px;
+}
+  .footer span {
+    font-size: 10px; }
+  .footer-nav {
+    display: flex;}
+    .footer-nav__item a {
+      border-radius: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 5px;
+      margin: 5px;
+      background: #ff5450; }
+      .footer-nav__item a:hover {
+        background: #ffffff; }
+
+.btn {
+  border: none;
+  background: none;
+  cursor: pointer; }
+  .btn:focus {
+    outline: none; }
+  .btn-footer {
+    font-size: 10px; }
+  .btn a {
+      color: white;
+  }
+    .btn a:hover {
+        color: #ff5450;
+    }
+/*Profile start*/
+.profile-top {
+}
+.profile-top__user {
+    display: flex;
+}
+/*Profile end*/
+
+.tab {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0; }
+  .tab-title {
+    color: #ff5450;
+    margin-bottom: 20px; }
+  .tab-container {
+    display: flex; }
+  .tab-round {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 0 20px 0 20px;
+    margin: 0 1px; }
+    .tab-round:first-child .tab-group:before {
+      display: none; }
+    .tab-round:last-child .tab-group:after {
+      display: none; }
+  .tab-group {
+    position: relative; }
+    .tab-group:before {
+      content: '';
+      width: 20px;
+      height: 50%;
+      position: absolute;
+      left: 0;
+      -webkit-transform: translateX(-100%);
+              transform: translateX(-100%);
+      top: 0; }
+    .tab-group:after {
+      content: '';
+      width: 20px;
+      height: 50%;
+      position: absolute;
+      right: 0;
+      -webkit-transform: translateX(100%);
+              transform: translateX(100%);
+      top: calc(50% - 1px); }
+    .tab-group:not(:last-child) {
+      margin-bottom: 10px; }
+    .tab-group > :nth-child(2) {
+      background: #ffffff; }
+    .tab-group > :nth-child(1) {
+      background: #ffffff;
+      border-bottom: 2px solid #3b3b3b; }
+
+.cell {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+  color: #3b3b3b; }
+
+.content {
+  margin-top: 19px;
+  display: flex; }
+  .content > :not(:last-child) {
+    margin-right: 10px; }
+  .content-right {
+    flex: 1; }
+  .content-left {
+    max-width: 500px; }
+
+.content-center__teamcreated {
+    margin-top: 25px;
+}
+
+.news-block {
+    height: 300px;
+}
+
+.bestteam-ladder {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; }
+.bestteam-ladder__item {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+.box {
+  border-radius: 10px;
+  overflow: hidden; }
+  .box-title {
+    background: #ff5450;
+    padding: 10px; }
+    .box-title a {
+        color: #ffffff;}
+        .box-title a:hover {
+            color: #5f5150;
+        }
+  .box-container {
+    background: #ffffff;
+    padding: 10px; }
+
+.rating-ladder {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    flex: 1;
+    justify-content: space-around;
+}
+  /*Teams Start*/
+.teams-ladder {
+    display: flex;
+}
+.teams-ladder__item {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+}
+    .teams-ladder__item > :first-child {
+        margin: 20px 0;
+    }
+
+.tab-rating__teams {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    padding: 5px;
+}
+    .tab-rating__teams:last-child {
+        border-bottom: 2px solid black;
+    }
+
+.tab-rating__teams-name {
+    margin-right: 150px;
+    display: flex;
+}
+    .tab-rating__teams-name a {
+        color: #ff5450;
+    }
+
+.tab-rating__teams-rating {
+    color: #ff5450;
+    display: flex;
+}
+  /*Teams End*/
+
+  /*TeamProfile start*/
+.teamprofile-top {
+    margin-top: 20px;
+    display: flex;
+    margin-bottom: 25px;
+}
+    .teamprofile-top span {
+        color: white;
+    }
+    .teamprofile-top__name {
+    color: white;
+}
+
+.teamprofile-top__center {
+    display: flex;
+    flex-direction: column;
+    margin-left: 25px;
+    margin-right: 25px;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.teamprofile-top__coins {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.ava {
+    padding: 80px;
+    background: white;
+    border-radius: 5px;
+}
+
+.teamprofile-center {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.teamprofile-center__participants {
+    display: flex;
+    flex: 2;
+    flex-direction: column;
+}
+
+.teamprofile-center__achievements {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+  /*TeamProfile end*/

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<LOC_WebApi.Models.ApplicationUser>
+
+@{
+    ViewBag.Title = "Игроки";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <div class="teams-ladder">
+        <div class="teams-ladder__item">
+            <h1>Игроки</h1>
+            <div>
+                <ul class="teams-ladder__tab" id="teams-ladder__tab">
+
+                    @foreach (var b in ViewBag.Users)
+                    {
+                        <li class="tab-rating__teams">
+                            <div class="tab-rating__teams-name">
+                                @Html.ActionLink($"{b.UserName}", "UserProfile", new { b.UserName })
+                            </div>
+                            <div class="tab-rating__teams-rating">
+                                @b.UserRating
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

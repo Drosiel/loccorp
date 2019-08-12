@@ -1,0 +1,28 @@
+﻿@model IEnumerable<LOC_WebApi.Models.ApplicationRole>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Админка";
+}
+
+<h2>Список ролей</h2>
+<table class="table">
+    <tr>
+        <th>Название</th>
+        <th>Описание</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Description</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>
+
+<h2>@Html.ActionLink("Создать роль", "Create", "Adminka")</h2>

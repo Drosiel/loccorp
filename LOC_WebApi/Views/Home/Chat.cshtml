@@ -1,0 +1,55 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "Чат";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Чат</title>
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    
+    <script>
+        var chatUserName = "@User.Identity.Name";
+    </script>
+
+    <h1 style="margin: 20px 0 20px 0">Добро Пожаловать в чат, <span style="color: yellow">&nbsp;@User.Identity.Name</span></h1>
+
+    <div class="chat-form">
+        <div class="main">
+            <div id="chatBody" class="chatBody">
+                <div class="chatBody-left">
+                    <div id="header"></div>
+
+                    <div id="chatroom"></div>
+
+                    <div id="inputForm">
+                        <input type="text" id="message" autofocus/>
+                        <input type="button" id="sendmessage" value="Отправить" onkeypress="return En(event)"  />
+                        @Html.ActionLink("На главную", "Index", "Home")
+                    </div>
+
+                </div>
+
+                <div class="chatBody-right">
+                    <div id="chatusers">
+                        <p><b>Все пользователи</b></p>
+                    </div>
+                </div>
+            </div>
+
+            <input id="hdId" type="hidden" />
+
+            <input id="username"  type="hidden" />
+        </div>
+    </div>
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <!--Ссылка на библиотеку SignalR -->
+    <script src="~/Scripts/jquery.signalR-2.4.0.min.js"></script>
+    <!--Ссылка на автоматически сгенерированный скрипт хаба SignalR -->
+    <script src="~/signalr/hubs"></script>
+    <script src="~/Scripts/Shared/util.js"></script>
+</body>
+</html>

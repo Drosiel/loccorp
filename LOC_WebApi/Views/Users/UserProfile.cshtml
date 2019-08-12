@@ -1,0 +1,30 @@
+﻿@model LOC_WebApi.Models.ApplicationUser
+
+@{
+    ViewBag.Title = @ViewBag.Users.UserName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <div class="teamprofile-top">
+        <div class="teamprofile-top__ava">
+            <img src="" class="ava" />
+        </div>
+
+        <div class="teamprofile-top__center">
+            <h2 class="teamprofile-top__name">@ViewBag.Users.UserName </h2>
+            <span>Рейтинг: @ViewBag.Users.UserRating</span>
+        </div>
+
+    </div>
+
+    <div class="teamprofile-center">
+
+    </div>
+
+    <div class="teamprofile-bottom">
+
+    </div>
+</div>
+
+

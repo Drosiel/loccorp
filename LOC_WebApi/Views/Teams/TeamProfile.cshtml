@@ -1,0 +1,45 @@
+﻿@model LOC_WebApi.Models.Teams
+
+@{
+    ViewBag.Title = @ViewBag.Teams.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="wrapper">
+    <div class="teamprofile-top">
+        <div class="teamprofile-top__ava">
+            <img src="" class="ava" />
+        </div>
+
+        <div class="teamprofile-top__center">
+            <h2 class="teamprofile-top__name">@ViewBag.Teams.Name ( @ViewBag.Teams.ShortName ) </h2>
+            <span>Рейтинг: @ViewBag.Teams.Rating</span>
+        </div>
+
+        <div class="teamprofile-top__coins">
+            <span>Монеты: @ViewBag.Teams.Coins</span>
+        </div>
+       <!-- <div class="teamprofile-top__coins">
+            @Html.ActionLink("Удалить", "TeamDelete", new { Model.Guid })
+        </div>-->
+    </div>
+
+    <div class="teamprofile-center">
+        <div class="teamprofile-center__participants">
+            <span>Участники:</span>
+            <div>@ViewBag.Teams.Participants</div>
+        </div>
+
+        <div  class="teamprofile-center__achievements">
+            <span>Достижения:</span>
+            <div>@ViewBag.Teams.Achievements</div>
+        </div>
+    </div>
+
+    <div class="teamprofile-bottom">
+        Стезя
+    </div>
+
+</div>
+
+

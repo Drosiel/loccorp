@@ -1,0 +1,121 @@
+﻿<html>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' , content='initial-scale=1.0, width=device-width'>
+    <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <title>@ViewBag.Title</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-top">
+            <span class="header-logo">LADRAMHAIOLA</span>
+            <div class="header-reg">
+                <div id="NotLoggedInPH">
+                    <div>
+                        <button class="btn" id="signup">@Html.ActionLink("Регистрация", "Register", "Account")</button>
+                    </div>
+                    <div>
+                        <button class="btn" id="login">@Html.ActionLink("Вход", "Login", "Account")</button>
+                    </div>
+                </div>
+                <div id="LoggedInPH">
+                    <div>
+                        <button class="btn header-reg__logout" id="logout">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "btn" })</button>
+                    </div>
+                    <div class="header-reg__username">
+                        @User.Identity.Name
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <ul class="header-nav">
+                <li class="header-nav__item">
+                    <a href="/Home/index">
+                        <div>Главная</div>
+                    </a>
+                </li>
+                <li class="header-nav__item">
+                    <a href="/Home/tournament">
+                        <div>Турнир</div>
+                    </a>
+                </li>
+                <li class="header-nav__item">
+                    <a href="/Home/Rating">
+                        <div>Ранг<br></div>
+                    </a>
+                </li>
+                <li class="header-nav__item" id="nav-chat">
+                    <a href="/Home/Chat">
+                        <div>Чат<br></div>
+                    </a>
+                </li>
+                <li class="header-nav__item">
+                    <a href="/Home/b">
+                        <div>?<br><span>скоро</span></div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- <div class="overlay1" id="overlay1">
+         <form class="popup-container">
+             <div class="popup-container__reg">
+                 <label>Введите email</label>
+                 <input type="email" id="email" />
+                 <label>Введите логин</label>
+                 <input type="text" id="login" />
+                 <label>Введите пароль</label>
+                 <input type="password" id="password" />
+                 <label>Подтвердите пароль</label>
+                 <input type="password" id="confirmpassword" />
+                 <input type="submit" id="submit" value="Регистрация" />
+                 <div class="popup-close" id="popup-close"></div>
+             </div>
+         </form>
+     </div>
+
+     <div class="overlay2" id="overlay2">
+         <form>
+             <div class="loginForm popup-container">
+                 <h3>Вход на сайт</h3>
+                 <label>Логин: </label>
+                 <input type="text" id="LoginLogin" />
+                 <label>Пароль: </label>
+                 <input type="password" id="passwordLogin" />
+                 <input type="submit" id="submitLogin" value="Логин" />
+                 <div class="loginForm-close" id="loginForm-close"></div>
+             </div>
+         </form>
+     </div>
+         <div>
+             <input type="submit" id="getItemsButton" value="Получить данные" />
+         </div>-->
+
+
+    @RenderBody()
+
+    <footer class="footer">
+        <span>
+        </span>
+        <div>
+            <ul class="footer-nav">
+                <li class="footer-nav__item">
+                    <div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/shared")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+</body>
+</html>

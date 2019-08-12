@@ -1,0 +1,13 @@
+﻿@model LOC_WebApi.Models.EditRoleModel
+
+<h2>Редактирование роли</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div>
+        @Html.ValidationSummary(true, "")
+        <p><input type="submit" value="Изменить" /></p>
+    </div>
+}

@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Рейтинг";
+}
+<div class="wrapper rating-ladder">
+    <div>
+        @Html.ActionLink("Команды", "TeamLadder", "Teams", null, new { @style = "color: red; font-size: 30px;" })
+    </div>
+    <div>
+        @Html.ActionLink("Игроки", "UserLadder", "Users",null, new { @style = "color: red; font-size: 30px;" })
+    </div>
+</div>

@@ -1,0 +1,89 @@
+﻿@model LOC_WebApi.Models.Teams
+
+@{
+    ViewBag.Title = "TeamDelete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>TeamDelete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Teams</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Guid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Rating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Rating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ShortName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ShortName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Coins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Coins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Participants)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Participants)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Achievements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Achievements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.test)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.test)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "TeamLadder")
+        </div>
+    }
+</div>

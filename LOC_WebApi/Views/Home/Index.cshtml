@@ -1,0 +1,59 @@
+﻿@model IEnumerable<LOC_WebApi.Models.Teams>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "LADRAMHAIOLA";
+}
+<div class="wrapper">
+    <div class="content">
+        <div class="content-left">
+            <div class="content-left__news box">
+                <h1 class="news-title box-title">Новости</h1>
+                <div class="news-block box-container">
+                    <p>- Ура, мы создали сайт!</p>
+                    <p>- Добавил простенький чатик</p>
+                </div>
+            </div>
+        </div>
+        <div class="content-center">
+            <div class="content-center__bestteam box">
+                <h1 class="bestteam-title box-title">
+                    <a href="~/Teams/TeamLadder">
+                        Топ 3 команды
+                    </a> 
+                </h1>
+                <ul class="bestteam-ladder box-container">
+                @foreach(var b in ViewBag.Teams)
+                {
+                    <li class="bestteam-ladder__item">
+                        <div>
+                            @b.Name
+                        </div>
+                        <div class="tab-rating__teams-rating">
+                            @b.Rating
+                        </div>
+                    </li>
+                }
+                </ul>
+            </div>
+            <div class="content-center__teamcreated box">
+                <h1 class="box-title">
+                    <a href="~/Teams/TeamCreated">
+                        Создание команды
+                        (после регистрации)
+                    </a>
+                </h1>
+            </div>
+        </div>
+        <div class="content-right">
+            <div class="content-right__rules box">
+                <h1 class="box-title">
+                    ;)
+                </h1>
+                <div class="box-container">
+                    :)
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
