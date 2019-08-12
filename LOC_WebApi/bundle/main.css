@@ -1,0 +1,36 @@
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline: none; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none; }
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  height: 50px; }
+
+.logo {
+  margin-right: 20px; }
+
+.menu {
+  flex: 1;
+  display: flex; }
+  .menu__list {
+    display: flex; }
+  .menu__item {
+    padding: 0 10px; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 16px/1 "PT Sans", sans-serif; }
+

@@ -19,9 +19,8 @@ namespace LOC_WebApi
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/bundle/css").Include(
+                      "~/bundle/main.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/shared").Include(
                 "~/Scripts/Shared/*.js"));
