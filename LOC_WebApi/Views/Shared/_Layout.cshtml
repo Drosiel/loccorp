@@ -1,11 +1,10 @@
 ﻿<html>
 <head>
+    <title>@ViewBag.Title</title>
     <meta charset='utf-8'>
     <meta name='viewport' , content='initial-scale=1.0, width=device-width'>
     <link href="https://fonts.googleapis.com/css?family=Russo+One&amp;subset=cyrillic,latin-ext" rel="stylesheet">
     @Styles.Render("~/bundle/main.css")
-    @Scripts.Render("~/bundles/modernizr")
-    <title>@ViewBag.Title</title>
 </head>
 
 <body>
@@ -19,27 +18,33 @@
                 <li class="menu__item"><a href="#">статистика</a></li>
             </ul>
         </nav>
-
-        <div class="form__login">
-            <div id="NotLoggedInPH">
-                 <button class='btn' id="signup">@Html.ActionLink("Регистрация", "Register", "Account")</button>
-                 <button class='btn' id="login">@Html.ActionLink("Вход", "Login", "Account")</button>
-            </div>
-            <div id="LoggedInPH">
-                <button class='btn' id="logout">@Html.ActionLink("Выйти", "Logout", "Account", null, new { @class = "btn" })</button>
-                <div>@User.Identity.Name</div>
-            </div>
+        <div>
+            <button class="btn btn__login">регистрация</button>
         </div>
-
     </header>
 
     @RenderBody()
 
-    <div class='hide'></div>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/shared")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div class="popup popup__login">
+        <div class="popup__title">
+            <span>Регистрация</span>
+            <div class="popup__close"></div>
+        </div>
+        <form class="form form__login">
+            <label class="form__label">
+                <span>введите почту/логин</span>
+                <input class="form__input" />
+            </label>
+            <label class="form__label">
+                <span>введите пароль</span>
+                <input class="form__input" />
+            </label>
+            <div class="form__btn">
+                <button type="submit" class="btn btn__submit">регистрация</button>
+            </div>
+        </form>
+    </div>
 
+    @Scripts.Render("~/bundle/bundle.js")
 </body>
 </html>

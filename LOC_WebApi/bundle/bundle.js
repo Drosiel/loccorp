@@ -92,7 +92,11 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Content_style_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _Content_style_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Content_style_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Scripts_main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _Scripts_main__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Scripts_main__WEBPACK_IMPORTED_MODULE_1__);
 //sass
+ //js
+
 
 
 /***/ }),
@@ -618,6 +622,24 @@ module.exports = function (css) {
 
   return fixedCss;
 };
+
+/***/ }),
+/* 5 */
+/***/ (function(module, exports) {
+
+let showFormLogin = document.querySelector('.btn__login');
+let formLogin = document.querySelector('.popup__login');
+let formLoginClose = formLogin.querySelector('.popup__close');
+showFormLogin.addEventListener('click', function () {
+  toggleClass(formLogin);
+});
+formLoginClose.addEventListener('click', function () {
+  toggleClass(formLogin);
+});
+
+function toggleClass(elem) {
+  elem.classList.toggle('active');
+}
 
 /***/ })
 /******/ ]);
