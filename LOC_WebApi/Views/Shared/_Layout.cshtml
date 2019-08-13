@@ -1,4 +1,5 @@
-﻿<html>
+﻿@model LOC_WebApi.Models.RegisterModel
+<html>
 <head>
     <title>@ViewBag.Title</title>
     <meta charset='utf-8'>
@@ -19,6 +20,7 @@
             </ul>
         </nav>
         <div>
+            @User.Identity.Name
             <button class="btn btn__login">регистрация</button>
         </div>
     </header>
@@ -26,23 +28,52 @@
     @RenderBody()
 
     <div class="popup popup__login">
-        <div class="popup__title">
-            <span>Регистрация</span>
-            <div class="popup__close"></div>
-        </div>
-        <form class="form form__login">
-            <label class="form__label">
-                <span>введите почту/логин</span>
-                <input class="form__input" />
-            </label>
-            <label class="form__label">
-                <span>введите пароль</span>
-                <input class="form__input" />
-            </label>
-            <div class="form__btn">
-                <button type="submit" class="btn btn__submit">регистрация</button>
+        @using (Html.BeginForm())
+        {
+
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary()
+
+            <div class="popup__title">
+                <span>Регистрация</span>
+                <div class="popup__close"></div>
             </div>
-        </form>
+            <form class="form form__login">
+
+                <div class="form__label">
+                    <span>Электронный адрес</span>
+                    <div>
+                        @Html.EditorFor(model => model.Email)
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </div>
+                </div>
+                <div class="form__label">
+                    <span>Логин</span>
+                    <div>
+                        @Html.EditorFor(model => model.UserName)
+                        @Html.ValidationMessageFor(x => x.UserName)
+                    </div>
+                </div>
+                <div class="form__label">
+                    <span>Пароль</span>
+                    <div>
+                        @Html.EditorFor(model => model.Password)
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </div>
+                </div>
+                <div class="form__label">
+                    <span>Повторите пароль</span>
+                    <div>
+                        @Html.EditorFor(model => model.PasswordConfirm)
+                        @Html.ValidationMessageFor(x => x.PasswordConfirm)
+                    </div>
+                </div>
+
+                <div class="form__btn">
+                    <button type="submit" class="btn btn__submit">регистрация</button>
+                </div>
+            </form>
+        }
     </div>
 
     @Scripts.Render("~/bundle/bundle.js")
