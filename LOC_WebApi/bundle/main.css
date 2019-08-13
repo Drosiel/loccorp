@@ -10,25 +10,31 @@
 
 .popup {
   display: none;
-  background: #f1f1f1;
-  width: 500px;
   position: fixed;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%); }
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8); }
   .popup.active {
     display: block; }
-  .popup__title {
+  .popup__inner {
+    background: #f1f1f1;
+    width: 500px;
+    margin: 100px auto; }
+  .popup__top {
     padding: 10px 15px;
     display: flex;
     align-items: center; }
-    .popup__title span {
-      flex: 1; }
+  .popup__title {
+    flex: 1; }
   .popup__close {
     width: 15px;
     height: 15px;
     background: #000;
     cursor: pointer; }
+  .popup__wrapper.hidden {
+    display: none !important; }
 
 .form {
   display: flex;
@@ -48,8 +54,9 @@
 li {
   list-style: none; }
 
-a {
-  text-decoration: none; }
+a, a:focus {
+  text-decoration: none;
+  color: #000; }
 
 input {
   height: 27px;

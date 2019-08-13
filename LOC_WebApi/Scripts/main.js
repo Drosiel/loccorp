@@ -1,14 +1,36 @@
-let showFormLogin = document.querySelector('.btn__login')
-let formLogin = document.querySelector('.popup__login')
-let formLoginClose = formLogin.querySelector('.popup__close')
+let toggleFormLogin = document.querySelectorAll('.btn__login')
+let popup = document.querySelector('.popup')
+let popupTitle = document.querySelector('.popup__title')
+let popupClose = document.querySelectorAll('.popup__close')
 
-showFormLogin.addEventListener('click', function() {
-    toggleClass(formLogin)
-})
-formLoginClose.addEventListener('click', function() {
-    toggleClass(formLogin)
+let popupRegister = document.querySelector('.popup__wrapper.regiser')
+let popupLogin = document.querySelector('.popup__wrapper.login')
+
+toggleFormLogin.forEach(item => {
+    item.addEventListener('click', function() {
+        popup.classList.add('active')
+
+        if (item.dataset.value == 'register') {
+            popupLogin.classList.add('hidden')
+        } if (item.dataset.value == 'login') {
+            popupRegister.classList.add('hidden')
+        }
+
+    })
 })
 
-function toggleClass(elem) {
-    elem.classList.toggle('active')
-}
+popupClose.forEach(item => {
+    item.addEventListener('click', function() {
+        popup.classList.remove('active')
+        try {
+            popupLogin.classList.remove('hidden')
+        } catch (error) {
+            
+        }
+        try {
+            popupRegister.classList.remove('hidden')
+        } catch (error) {
+            
+        }
+    })
+})

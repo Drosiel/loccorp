@@ -10,7 +10,9 @@
 
 <body>
     <header class="header">
-        <div class="logo">LADRAMHAIOLA</div>
+        <div class="logo">
+            <a href="/">LADRAMHAIOLA</a>
+        </div>
 
         <nav class='menu'>
             <ul class="menu__list">
@@ -19,23 +21,68 @@
                 <li class="menu__item"><a href="#">статистика</a></li>
             </ul>
         </nav>
-        <div>
+        <ul class="login">
+            <li class="login__item">
+                <a class="btn btn__login" data-value="register">регистрация</a>
+            </li>
+            <li class="login__item">
+                <a class="btn btn__login" data-value="login">вход</a>
+            </li>
             @User.Identity.Name
-            <button class="btn btn__login">регистрация</button>
-        </div>
+        </ul>
     </header>
 
     @RenderBody()
 
-    <div class="popup popup__login">
+    <div class="popup">
+        <div class="popup__inner">
+            <div class="popup__wrapper regiser">
+                <div class="popup__top">
+                    <div class="popup__title">Регистрация</div>
+                    <div class="popup__close"></div>
+                </div>
+                <form class="form">
+
+                    <label class="form__label">
+                        <span>Электронный адрес регистрации</span>
+                        <input />
+                    </label>
+
+                    <div class="form__btn">
+                        <button type="submit" class="btn btn__submit"></button>
+                    </div>
+                </form>
+            </div>
+            <div class="popup__wrapper login">
+                <div class="popup__top">
+                    <div class="popup__title">Вход</div>
+                    <div class="popup__close"></div>
+                </div>
+                <form class="form">
+
+                    <label class="form__label">
+                        <span>Электронный адрес входы</span>
+                        <input />
+                    </label>
+
+                    <div class="form__btn">
+                        <button type="submit" class="btn btn__submit"></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="popup__layout"></div>
+    </div>
+
+    <!--<div class="popup">
         @using (Html.BeginForm())
         {
 
             @Html.AntiForgeryToken()
             @Html.ValidationSummary()
 
-            <div class="popup__title">
-                <span>Регистрация</span>
+            <div class="popup__top">
+                <div class="popup__title"></div>
                 <div class="popup__close"></div>
             </div>
             <form class="form form__login">
@@ -74,7 +121,7 @@
                 </div>
             </form>
         }
-    </div>
+    </div>-->
 
     @Scripts.Render("~/bundle/bundle.js")
 </body>

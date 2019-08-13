@@ -1,24 +1,31 @@
 .popup
     display: none
-    background: $main-clr
-    width: 500px
     position: fixed
-    top: 50px
-    left: 50%
-    transform: translateX(-50%)
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    background: rgba(0,0,0,.8)
     &.active
         display: block
-    &__title
+    &__inner
+        background: $main-clr
+        width: 500px
+        margin: 100px auto
+    &__top
         padding: 10px 15px
         display: flex
         align-items: center
-        span
-            flex: 1
+    &__title
+        flex: 1
     &__close
         width: 15px
         height: 15px
         background: #000
         cursor: pointer
+    &__wrapper
+        &.hidden
+            display: none !important
 
 .form
     display: flex
@@ -34,4 +41,3 @@
             margin-bottom: 15px
     &__btn
         text-align: center
-        
