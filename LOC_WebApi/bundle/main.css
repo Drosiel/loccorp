@@ -51,6 +51,9 @@
   .form__btn {
     text-align: center; }
 
+.miniprofile {
+  display: flex; }
+
 li {
   list-style: none; }
 

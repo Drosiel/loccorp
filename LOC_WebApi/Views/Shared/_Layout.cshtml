@@ -21,11 +21,11 @@
                 <li class="menu__item"><a href="#">статистика</a></li>
             </ul>
         </nav>
-        <ul class="login">
-            <li class="login__item">
+        <ul class="miniprofile">
+            <li class="miniprofile__item">
                 <a class="btn btn__login" data-value="register">регистрация</a>
             </li>
-            <li class="login__item">
+            <li class="miniprofile__item">
                 <a class="btn btn__login" data-value="login">вход</a>
             </li>
         </ul>
@@ -48,6 +48,7 @@
                     <div class="popup__title">Регистрация</div>
                     <div class="popup__close"></div>
                 </div>
+<<<<<<< HEAD
                 @using (Html.BeginForm("Register", "Account", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
@@ -83,6 +84,38 @@
 
                     <div class="form__btn">
                         <button type="submit" class="btn btn__submit">регистрация</button>
+=======
+                <form class="form" metod="post" action="/">
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary()
+
+                    <label class="form__label">
+                        <span>Электронный адрес</span>
+                        @Html.EditorFor(model => model.Email)
+                        @Html.ValidationMessageFor(x => x.Email)
+                    </label>
+
+                    <label class="form__label">
+                        <span>Логин</span>
+                        @Html.EditorFor(model => model.UserName)
+                        @Html.ValidationMessageFor(x => x.UserName)
+                    </label>
+
+                    <label class="form__label">
+                        <span>Пароль</span>
+                        @Html.EditorFor(model => model.Password)
+                        @Html.ValidationMessageFor(x => x.Password)
+                    </label>
+
+                    <label class="form__label">
+                        <span>Повторить пароль</span>
+                        @Html.EditorFor(model => model.PasswordConfirm)
+                        @Html.ValidationMessageFor(x => x.PasswordConfirm)
+                    </label>
+
+                    <div class="form__btn">
+                        <button type="submit" class="btn btn__submit">Регистрация</button>
+>>>>>>> bc159f40bf74fe3d9a5045335694accc836da535
                     </div>
                 }
             </div>
@@ -92,6 +125,7 @@
                     <div class="popup__title">Вход</div>
                     <div class="popup__close"></div>
                 </div>
+<<<<<<< HEAD
                 @using (Html.BeginForm("Login", "Account", FormMethod.Post))
                 {
                     @Html.AntiForgeryToken()
@@ -108,6 +142,29 @@
                         </p>
                         <p><button type="submit">Войти</button></p>
                         @Html.ActionLink("Зарегистрироваться", "Register", "Account", null, new { @class = "btn__submit" })
+=======
+
+                <form class="form" metod="post" action="/">
+                    @Html.AntiForgeryToken()
+
+                    <div>
+                        @Html.ValidationSummary()
+                        <input type="hidden" name="returnUrl" value="@ViewBag.returnUrl" />
+
+                        <label class="form__label">
+                            <span>Логин</span>
+                            @Html.EditorFor(x => x.UserName)
+                        </label>
+
+                        <label class="form__label">
+                            <span>Пароль</span>
+                            @Html.PasswordFor(x => x.Password)
+                        </label>
+
+                        <div class="form__btn">
+                            <button type="submit" class="btn btn__submit">Вход</button>
+                        </div>
+>>>>>>> bc159f40bf74fe3d9a5045335694accc836da535
                     </div>
                 }
             </div>
