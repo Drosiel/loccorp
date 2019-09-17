@@ -22,11 +22,13 @@ namespace LOC_WebApi.Controllers
             }
         }
 
+        //Регистрация
         public ActionResult Register()
         {
             return View();
         }
 
+        //Регистрация метод POST
         [HttpPost]
         public async Task<ActionResult> Register(RegisterModel model)
         {
@@ -58,12 +60,14 @@ namespace LOC_WebApi.Controllers
             }
         }
 
+        //Логин
         public ActionResult Login(string returnUrl)
         {
             ViewBag.returnUrl = returnUrl;
             return View();
         }
 
+        //Логин метод POST
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model, string returnUrl)
@@ -92,6 +96,8 @@ namespace LOC_WebApi.Controllers
             ViewBag.returnUrl = returnUrl;
             return View(model);
         }
+
+        //Выход с сайта
         public ActionResult Logout()
         {
             AuthenticationManager.SignOut();
