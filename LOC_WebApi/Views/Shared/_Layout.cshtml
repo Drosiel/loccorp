@@ -22,6 +22,8 @@
                 <li class="menu__item"><a href="#">статистика</a></li>
             </ul>
         </nav>
+        @if (@User.Identity.Name == "")
+        {
         <ul class="login">
             <li class="login__item">
                 <a class="btn btn__login" data-value="register">регистрация</a>
@@ -30,14 +32,18 @@
                 <a class="btn btn__login" data-value="login">вход</a>
             </li>
         </ul>
+        }
+        else
+        {
         <ul>
             <li>
                 @User.Identity.Name
-            <li/>
+            <li />
             <li>
                 <button class="btn">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "btn" })</button>
             </li>
         </ul>
+        }
     </header>
 
     @RenderBody()
