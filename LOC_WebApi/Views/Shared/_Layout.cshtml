@@ -12,14 +12,14 @@
 <body>
     <header class="header">
         <div class="logo">
-            <a href="/">LADRAMHAIOLA</a>
+            <a href="/">HAND-MADE</a>
         </div>
 
         <nav class='menu'>
             <ul class="menu__list">
-                <li class="menu__item"><a href="#">главная</a></li>
-                <li class="menu__item"><a href="#">турниры</a></li>
-                <li class="menu__item"><a href="#">статистика</a></li>
+                <li class="menu__item"><a href="#">1</a></li>
+                <li class="menu__item"><a href="#">2</a></li>
+                <li class="menu__item"><a href="#">3</a></li>
             </ul>
         </nav>
         @if (@User.Identity.Name == "")
@@ -40,7 +40,7 @@
                 @User.Identity.Name
             <li />
             <li>
-                <button class="btn">@Html.ActionLink("Выход", "Logout", "Home", null, new { @class = "btn" })</button>
+                <button class="btn">@Html.ActionLink("Выход", "Logout", "Account", null, new { @class = "btn" })</button>
             </li>
         </ul>
         }

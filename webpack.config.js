@@ -17,6 +17,12 @@ let conf = {
         publicPath: '',
     },
 
+    devServer: {
+        contentBase: './',
+        historyApiFallback: true,
+        port: 8181
+    },
+
     stats: {
         errors: true,
         errorDetails: true,

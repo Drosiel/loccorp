@@ -39,7 +39,7 @@ namespace LOC_WebApi.Controllers
                 IdentityResult result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Login", "Account");
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {

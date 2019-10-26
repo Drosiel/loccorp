@@ -1,0 +1,58 @@
+.main
+    margin: 0 auto
+    width: 100%
+    height: 350px
+    overflow: hidden
+    &-nav
+        width: 100%
+        display: flex
+        margin: 0
+        padding: 0
+
+.card
+    flex: 1
+    position: relative
+    height: 350px
+    background-repeat: no-repeat
+    background-position: center center
+    transition: all 500ms ease
+    &:nth-child(1)
+        background: #787878
+    &:nth-child(2)
+        background: #784078
+    &:nth-child(3)
+        background: #407878
+    &:nth-child(4)
+        background: #787840
+    &:nth-child(5)
+        background: #404040
+    &:nth-child(6)
+        background: #787878
+    &:nth-child(7)
+        background: #784078
+    &:nth-child(8)
+        background: #407878
+    &:nth-child(9)
+        background: #787840
+    &:nth-child(10)
+        background: #404040
+    > *      
+        text-overflow:ellipsis
+        position:relative
+        z-index: 5px
+        white-space:nowrap
+        overflow:hidden
+        transition:all 400ms ease-in-out
+    &:focus-within
+        width: 8%
+    &:hover
+        flex: 4
+        > .card-title
+            display: inline
+        > .card-text
+            display: flex
+    &-title
+        display: none
+        font-size: 20px
+    &-text
+        display: none
